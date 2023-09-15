@@ -1,0 +1,31 @@
+hydra:
+  output_subdir: null
+
+save_model_path: models/model_weights.pt
+
+dataset:
+  root: ../data
+  dataset: VOCDetection # ["Flowers102", "FashionMNIST", "VOCDetection"]
+  download: False
+
+train:
+  epochs: 1
+  lr: 3e-4
+  weight_decay: 5e-5
+  batch_size: 20
+
+mlflow:
+  # mlflow_tracking_uri: "https://sgh-100e.mlflow.aisingapore.net"
+  mlflow_tracking_uri: "http://127.0.0.1:5000"
+  mlflow_exp_name: "vit-1"
+
+data_prep:
+  annotations_folder: "./data/input/annotations/"
+  isyntax_folder: "./data/input/AISG-Gastric/"
+  patch_output_folder: "./data/output"
+  level: 0
+  backend: "SOFTWARE"
+  patch_size: 512
+
+app:
+  folder_path: "path/to/your/dataset" # "G:/My Drive/DataScience/Computer_Vision/data/flowers-102/jpg/" 
