@@ -43,7 +43,6 @@ def train(train_set, cfg, in_channels=3, num_classes=10):
                 out = network(imgs.to(device))
                 loss = loss_function(out, labels.to(device))
 
-
                 loss.backward()
                 optimizer.step()
                 tepoch.set_postfix(loss=loss.item())

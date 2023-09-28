@@ -74,8 +74,9 @@ class AlexNet(nn.Module):
         output = self.fc_3(output)
         output = self.relu(output)
 
-        output = self.softmax(output)
-        # output = self.sigmoid(output)
+        # output = self.softmax(output)
+        # apply sigmoid because want to check for confidence
+        output = self.sigmoid(output)
 
         return output 
 
